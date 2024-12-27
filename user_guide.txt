@@ -1,0 +1,44 @@
+Welcome to the Streaming RAG API!
+
+This API allows you to submit a query and receive dynamically generated responses using retrieval-augmented generation techniques.
+
+1. **How to Use the API:**
+
+    - **Endpoint**: `POST /query`
+    - **Request Body**:
+      The body of the request should include the query you want to ask and the optional `top_k` parameter. 
+      - `query`: The question or topic you want information about.
+      - `top_k`: The number of pieces of data you want to retrieve for your answer (optional, default is 3).
+
+    Example Request Body:
+    {
+      "query": "What is Python used for?",
+      "top_k": 2
+    }
+    Refer "sample_queries.json" file for more.
+
+2. **Response:**
+    The API will stream back the relevant information in parts, depending on the `top_k` parameter. The response will be a combination of data retrieved and generated text based on the query.
+
+    Example Response:
+    {
+      "answer": "Python is widely used for web development, data science, automation, and many other fields."
+    }
+
+3. **Error Handling:**
+    - If the query doesn't match any available topics, you will receive a response with a 404 error and a message stating "No relevant data found."
+    - In case of a server error, a 500 error will be returned.
+
+4. **How to Run the Application:**
+
+    - Install dependencies:
+      Run `pip install -r requirements.txt` to install the necessary dependencies.
+
+    - Start the FastAPI application:
+      Run `uvicorn app:app --reload` in the terminal.
+
+    - The application will be available at `http://127.0.0.1:8000`. 
+    - You can interact with it using a tool like Postman or directly from the Swagger UI available at `http://127.0.0.1:8000/docs`.
+
+    - Example of how to test the endpoint:
+        - Send a `POST` request to `http://127.0.0.1:8000/query` with a JSON body (see the "sample_queries.json" file for examples).

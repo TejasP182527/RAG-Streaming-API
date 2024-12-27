@@ -1,0 +1,18 @@
+[
+  {
+    "query": "What is Python programming?",
+    "top_k": 2
+  },
+  {
+    "query": "Tell me about quantum computing.",
+    "top_k": 3
+  },
+  {
+    "query": "In what category NASA works?",
+    "top_k": 2
+  },
+  {
+    "query": "What is java?",
+    "top_k": 2
+  }
+]
