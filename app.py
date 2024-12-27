@@ -1,7 +1,6 @@
 __author__ = "Tejas Pathak"
 __version__ = "1.0"
 __description__ = "This is a FastAPI application for RAG Streaming API. It processes user queries and returns relevant context based on predefined mock data."
-__app_name__ = "RAG Streaming API - Karini Lab Test"
 
 # Importing required libraries
 import logging
